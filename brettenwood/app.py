@@ -132,18 +132,18 @@ def portfolio():
     portfolio_images = [
         {
             "filename": "job1.jpg",
-            "location": "Umhloti Beach.",
-            "description": "2x1500L system with advanced filtration"
+            "location": "Amanzimtoti.",
+            "description": "20� Big Blue 3 Stage Filtration with 55w UV setup"
         },
         {
             "filename": "job2.jpg",
-            "location": "Kloof",
-            "description": "5050lt Eco Tank powered by a 1.1kw Multistage Pump setup for full automation"
+            "location": "Pietermaritzburg",
+            "description": "5250lt JoJo tank paired with a 1.1kw ZIL VSD, set up on a buffer connection to ensure a constant flow of municipal water into the tank, which is then fed into the home via a 3 Stage Filter with UV"
         },
         {
             "filename": "job3.jpg",
             "location": "Tongaat",
-            "description": "5050lt Eco Tank"
+            "description": "5000lt LIN Tank powered by a 0.75kw Centrifugal Pump secured with our custom fabricated Anti-Theft Cage"
         },
         
         {

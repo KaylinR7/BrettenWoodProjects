@@ -37,6 +37,7 @@
     <Content Include="requirements.txt" />
     <Content Include="static\css\style.css" />
     <Content Include="static\images\portfolio\job1.jpg" />
+    <Content Include="static\images\portfolio\job3.jpg" />
     <Content Include="static\images\portfolio\job2.jpg" />
     <Content Include="static\images\systems\eco-1000.jpg" />
     <Content Include="static\images\systems\eco-2500.png" />
