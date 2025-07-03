@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="contact-header">
+    <h1>Get In Touch</h1>
+    <p>Contact us for inquiries, quotes, or to schedule a consultation</p>
+</section>
+
+<section class="contact-container">
+    <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
+                    <option value="quote">Request a Quote</option>
+                    <option value="service">Service Inquiry</option>
+                    <option value="maintenance">Maintenance Request</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </div>
+
+    <div class="contact-info">
+        <h2>Contact Information</h2>
+        <div class="info-card">
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h3>Location</h3>
+                    <p>KwaZulu-Natal, South Africa</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h3>Phone</h3>
+                    <p>+27 31 123 4567</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h3>Email</h3>
+                    <p>info@brettenwood.co.za</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <h3>Working Hours</h3>
+                    <p>Monday - Friday: 8:00 - 17:00</p>
+                    <p>Saturday: 8:00 - 13:00</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-area">
+            <h3>Service Area</h3>
+            <p>We serve all of KwaZulu-Natal including Durban, Pietermaritzburg, Ballito, Umhlanga, and surrounding areas.</p>
+        </div>
+    </div>
+</section>
+
+<section class="map-section">
+    <h2>Find Us</h2>
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110967.2234782626!2d30.9413078!3d-29.858680399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef7aad9f5f5b6d9%3A0x1b1b1b1b1b1b1b1b!2sKwaZulu-Natal!5e0!3m2!1sen!2sza!4v1620000000000!5m2!1sen!2sza" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+{% endblock %}

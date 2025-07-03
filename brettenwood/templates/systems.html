@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="systems-header">
+    <h1>Our Water System Solutions</h1>
+    <p>Quality installations with premium components - prices are averages and may vary based on material costs</p>
+</section>
+
+<section class="brand-toggle">
+    <button class="brand-btn active" data-brand="all">All Brands</button>
+    <button class="brand-btn" data-brand="jojo">JoJo</button>
+    <button class="brand-btn" data-brand="eco">Eco</button>
+</section>
+
+<section class="current-special">
+    <div class="special-badge">Current Special</div>
+    <h2>1000L Starter Package</h2>
+    <div class="special-content">
+        <div class="special-details">
+            <ul>
+                <li>1000L Tank (JoJo or Eco)</li>
+                <li>0.37kW Centrifugal Pump</li>
+                <li>Booster Pump Included</li>
+                <li>Basic Installation</li>
+            </ul>
+            <div class="special-price">
+                <span class="old-price">R8,499</span>
+                <span class="price">R6,999</span>
+                <small>Limited time offer</small>
+            </div>
+        </div>
+        <a href="{{ url_for('contact') }}?package=special" class="cta-button">Claim This Offer</a>
+    </div>
+</section>
+
+<section class="systems-grid">
+    {% for system in systems %}
+    <div class="system-card" data-brand="{{ system.brand|lower }}">
+        <div class="system-badge">{{ system.brand }}</div>
+        <div class="system-image" style="background-image: url('{{ url_for('static', filename='images/systems/' + system.image) }}')"></div>
+        <div class="system-details">
+            <h2>{{ system.name }}</h2>
+            <div class="specs">
+                <p><strong>Capacity:</strong> {{ system.capacity }}</p>
+                <p><strong>Pump Power:</strong> {{ system.pump }}</p>
+                {% if system.filtration %}
+                <p><strong>Includes:</strong> {{ system.filtration }} filtration</p>
+                {% endif %}
+            </div>
+            <div class="price-container">
+                <span class="price">From {{ system.price }}</span>
+                <small>Prices may vary</small>
+                <a href="{{ url_for('contact') }}?system={{ system.id }}" class="inquiry-button">Get Quote</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+<!-- Redesigned Filtration Section -->
+<section class="filtration-section">
+    <div class="filtration-card">
+        <div class="filtration-image-container">
+            <img src="{{ url_for('static', filename='images/systems/filtration-system.jpg') }}"
+                 alt="3-Stage Filtration System"
+                 class="filtration-image">
+            <span class="filtration-badge">Premium Upgrade</span>
+        </div>
+        <div class="filtration-content">
+            <h2 class="filtration-title">3-Stage Filtration System</h2>
+            <p>Add premium water filtration to any of our systems for cleaner, better-tasting water.</p>
+
+            <div class="filtration-specs">
+                <div class="spec-item">
+                    <svg class="spec-icon" viewBox="0 0 24 24"><path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" /></svg>
+                    <span><strong>Stage 1:</strong> Sediment filtration (5 micron)</span>
+                </div>
+                <div class="spec-item">
+                    <svg class="spec-icon" viewBox="0 0 24 24"><path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" /></svg>
+                    <span><strong>Stage 2:</strong> Carbon filtration (taste/odor)</span>
+                </div>
+                <div class="spec-item">
+                    <svg class="spec-icon" viewBox="0 0 24 24"><path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" /></svg>
+                    <span><strong>Stage 3:</strong> Polishing filter (1 micron)</span>
+                </div>
+            </div>
+
+            <div class="price-container">
+                <span class="price">R2,499</span>
+                <small>When bundled with any system</small>
+                <a href="{{ url_for('contact') }}?package=filtration" class="filtration-cta">Add to My System</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

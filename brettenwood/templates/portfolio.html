@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="portfolio-header">
+    <h1>Our Completed Projects</h1>
+    <p>Browse our water system installations across KZN</p>
+</section>
+
+<div class="gallery-container">
+    {% if images %}
+    <div class="square-gallery">
+        {% for image in images %}
+        <div class="gallery-square"
+             onclick="openModal(
+                 '{{ url_for('static', filename='images/portfolio/' + image.filename) }}',
+                 '{{ image.location }}',
+                 '{{ image.description }}'
+             )">
+            <img src="{{ url_for('static', filename='images/portfolio/' + image.filename) }}"
+                 alt="{{ image.location }} installation"
+                 class="square-image">
+            <div class="square-overlay">
+                <div class="overlay-text">
+                    <h3>{{ image.location }}</h3>
+                    <p>{{ image.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="no-projects">
+        <p>Our portfolio is currently being updated.</p>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Modal for expanded view -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="expandedImage">
+    <div id="caption"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">Reliable Water Backup Solutions for Your Home</h1>
+        <p class="hero-subtitle">Professional installation and maintenance services in KwaZulu-Natal</p>
+        <a href="{{ url_for('systems') }}" class="cta-button">Explore Our Systems</a>
+    </div>
+    <div class="hero-image">
+        <div class="water-animation"></div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <div class="feature-icon">
+            <i class="fas fa-tint"></i>
+        </div>
+        <h3>Water Backup Systems</h3>
+        <p>From 1000L to 5000L JoJo tank systems with professional installation</p>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon">
+            <i class="fas fa-home"></i>
+        </div>
+        <h3>Home Maintenance</h3>
+        <p>Comprehensive home maintenance services to keep your property in top condition</p>
+    </div>
+    <div class="feature-card">
+        <div class="feature-icon">
+            <i class="fas fa-award"></i>
+        </div>
+        <h3>Quality Guarantee</h3>
+        <p>All our work comes with a satisfaction guarantee and after-service support</p>
+    </div>
+</section>
+
+<section class="testimonial-preview">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-slider">
+        {% for review in reviews[:3] %}
+        <div class="testimonial">
+            <div class="stars">
+                {% for i in range(5) %}
+                {% if i < review.rating %}
+                <i class="fas fa-star"></i>
+                {% else %}
+                <i class="far fa-star"></i>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <p>"{{ review.comment }}"</p>
+            <span>- {{ review.name }}</span>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="{{ url_for('reviews') }}" class="secondary-button">View All Reviews</a>
+</section>
+{% endblock %}
