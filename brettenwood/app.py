@@ -61,71 +61,34 @@ def home():
 def about():
     return render_template('about.html')
 
-@app.route('/systems')
-def systems():
-    systems_data = [
+@app.route('/portfolio')
+def portfolio():
+    portfolio_images = [
         {
-            'id': 1,
-            'brand': 'JoJo',
-            'name': '1000L System',
-            'capacity': '1000L',
-            'pump': '0.35kW Centrifugal',
-            'filtration': None,
-            'price': 'R7,499',
-            'image': 'jojo-1000.png'
+            "filename": "job1.jpg",
+            "location": "Amanzimtoti.",
+            "description": "20� Big Blue 3 Stage Filtration with 55w UV setup"
         },
         {
-            'id': 2,
-            'brand': 'Eco',
-            'name': '1000L System',
-            'capacity': '1000L',
-            'pump': '0.35kW Centrifugal',
-            'filtration': '3-Stage',
-            'price': 'R8,999',
-            'image': 'eco-1000.jpg'
+            "filename": "job2.jpg",
+            "location": "Pietermaritzburg",
+            "description": "5250lt JoJo tank paired with a 1.1kw ZIL VSD, set up on a buffer connection to ensure a constant flow of municipal water into the tank, which is then fed into the home via a 3 Stage Filter with UV"
         },
         {
-            'id': 3,
-            'brand': 'JoJo',
-            'name': '2500L System',
-            'capacity': '2500L',
-            'pump': '0.75kW Multi-Stage',
-            'filtration': None,
-            'price': 'R12,999',
-            'image': 'jojo-2500.webp'
+            "filename": "job3.jpg",
+            "location": "Tongaat",
+            "description": "5000lt LIN Tank powered by a 0.75kw Centrifugal Pump secured with our custom fabricated Anti-Theft Cage"
         },
+        
         {
-            'id': 4,
-            'brand': 'Eco',
-            'name': '2500L System',
-            'capacity': '2500L',
-            'pump': '0.75kW Multi-Stage',
-            'filtration': '3-Stage',
-            'price': 'R14,499',
-            'image': 'eco-2500.png'
-        },
-        {
-            'id': 5,
-            'brand': 'JoJo',
-            'name': '5000L System',
-            'capacity': '5000L',
-            'pump': '1.1kW High-Pressure',
-            'filtration': None,
-            'price': 'R18,999',
-            'image': 'jojo-5200.webp'
-        },
-        {
-            'id': 6,
-            'brand': 'Eco',
-            'name': '5000L System',
-            'capacity': '5000L',
-            'pump': '1.1kW High-Pressure',
-            'filtration': '3-Stage',
-            'price': 'R21,499',
-            'image': 'eco-5000.png'
+            "filename": "job4.jpg",
+            "location": "Pietermaritzburg.",
+            "description": "5050lt jojo Tank powered by a 1.1kw Multistage Pump with 3 step filtration"
         }
+
+        # Add more images as needed
     ]
-    return render_template('systems.html', systems=systems_data)
+    return render_template('portfolio.html', images=portfolio_images)
 
 @app.route('/portfolio')
 def portfolio():
