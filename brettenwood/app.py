@@ -90,34 +90,7 @@ def portfolio():
     ]
     return render_template('portfolio.html', images=portfolio_images)
 
-@app.route('/portfolio')
-def portfolio():
-    portfolio_images = [
-        {
-            "filename": "job1.jpg",
-            "location": "Umhloti Beach.",
-            "description": "2x1500L system with advanced filtration"
-        },
-        {
-            "filename": "job2.jpg",
-            "location": "Kloof",
-            "description": "5050lt Eco Tank powered by a 1.1kw Multistage Pump setup for full automation"
-        },
-        {
-            "filename": "job3.jpg",
-            "location": "Tongaat",
-            "description": "5050lt Eco Tank"
-        },
-        
-        {
-            "filename": "job4.jpg",
-            "location": "Pietermaritzburg.",
-            "description": "5050lt jojo Tank powered by a 1.1kw Multistage Pump with 3 step filtration"
-        }
 
-        # Add more images as needed
-    ]
-    return render_template('portfolio.html', images=portfolio_images)
 @app.route('/reviews', methods=['GET', 'POST'])
 def reviews():
     reviews_list = load_reviews()
