@@ -1,0 +1,12 @@
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.sln.docstates
+bin/
+obj/
+
+# Other common ignores
+*.log
+*.cache
+/packages/
